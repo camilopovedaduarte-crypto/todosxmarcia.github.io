@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos x Marcia - Campaña Solidaria</title>
+    <!-- Tailwind CSS para el diseño rápido y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                        cursive: ['"Dancing Script"', 'cursive'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#ffe4e6', // rose-100
+                            DEFAULT: '#e11d48', // rose-600
+                            dark: '#be123c', // rose-700
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para los placeholders de imágenes */
+        .img-placeholder {
+            background-color: #f1f5f9;
+            border: 2px dashed #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-weight: 600;
+            text-align: center;
+            padding: 2rem;
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-slate-50 antialiased">
+
+    <!-- Navbar / Menú de Navegación Fijo -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-serif font-bold text-2xl text-brand">❤️ #TodosxMarcia</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#historia" class="text-gray-600 hover:text-brand font-semibold transition">Su Historia</a>
+                    <a href="#enfermedad" class="text-gray-600 hover:text-brand font-semibold transition">El Diagnóstico</a>
+                    <a href="#tratamiento" class="text-gray-600 hover:text-brand font-semibold transition">La Esperanza</a>
+                    <a href="#transparencia" class="text-gray-600 hover:text-brand font-semibold transition">Transparencia</a>
+                    <a href="#galeria" class="text-gray-600 hover:text-brand font-semibold transition">Galería</a>
+                    <a href="#donar" class="bg-brand hover:bg-brand-dark text-white px-6 py-2 rounded-full font-bold transition shadow-lg shadow-brand/30">Donar Ahora</a>
+                </div>
+                <!-- Menú móvil (simplificado) -->
+                <div class="md:hidden flex items-center">
+                    <a href="#donar" class="bg-brand text-white px-4 py-2 rounded-full font-bold text-sm">Donar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section / Cabecera Principal -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-brand-light/30 z-0"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block py-1 px-3 rounded-full bg-brand-light text-brand font-bold text-sm mb-4">Campaña Solidaria Urgente</span>
+                    <h1 class="text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6 text-gray-900">
+                        Acompañemos a Marcia en su lucha por la vida
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Nuestra amiga tuvo una recaída de su leucemia y necesita acceder a un tratamiento muy costoso fuera de Chile. <strong>Cualquier aporte suma.</strong>
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#donar" class="text-center bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-xl shadow-brand/30">
+                            <i class="fa-solid fa-heart mr-2"></i> Quiero Ayudar
+                        </a>
+                        <a href="#historia" class="text-center bg-white hover:bg-gray-50 text-gray-800 border-2 border-gray-200 px-8 py-4 rounded-full font-bold text-lg transition">
+                            Conocer más
+                        </a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <!-- Imagen principal estática -->
+                    <img src="https://cdn.shopify.com/s/files/1/0892/7710/4449/files/Captura_de_pantalla_2026-04-11_a_las_6.05.48_p._m..png?v=1775945192" 
+                         alt="Foto de Marcia" 
+                         class="w-full max-w-md h-auto rounded-3xl shadow-2xl object-cover transform hover:scale-105 transition duration-500 border-4 border-white">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Historia de Marcia (Copy) -->
+    <section id="historia" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <i class="fa-solid fa-quote-left text-5xl text-brand-light mb-6"></i>
+            <h2 class="text-6xl md:text-7xl font-cursive text-brand mb-8 transform -rotate-2">Todos x Marcia</h2>
+            <div class="text-lg md:text-xl text-gray-700 leading-relaxed space-y-4 text-left md:text-center italic">
+                <p>"El 10/04 se cumplió 1 año desde mi trasplante. Pensé que sería un día de celebración... pero la vida tenía otros planes. En mi control de este mes, algo cambió. Mis exámenes no salieron bien y una biopsia confirmó que la enfermedad volvió."</p>
+                <p>"Ha sido muy duro... he llorado, me he angustiado y he pensado en mil cosas. Pero, sobre todo, en mis hijos, en Andrés y en toda mi familia. Volver a enfrentar la leucemia no es fácil. Las opciones son más complejas: tendré que hospitalizarme nuevamente y comenzar quimioterapia muy pronto. Se viene una etapa difícil, y hoy más que nunca necesito apoyo."</p>
+                <p>"Existe una esperanza: un tratamiento que podría ayudarme a recuperarme y alargar mi vida... pero no está en Chile y su costo es muy alto. Aún así, <strong>voy a dar la pelea con todo.</strong> Por mí, por mis hijos pequeños, por mi familia... porque no quiero dejarlos solos."</p>
+                <p>"Cualquier ayuda, difusión o dato suma muchísimo. Gracias de corazón a todos quienes han estado conmigo desde el inicio de este camino. Y a ti <a href="https://www.instagram.com/andres_llanten21" target="_blank" class="text-brand font-bold hover:underline">@andres_llanten21</a>, gracias por tu amor incondicional."</p>
+            </div>
+            <div class="mt-8 font-bold text-xl text-gray-900">— Marcia Andrea Gómez Gallardo</div>
+        </div>
+    </section>
+
+    <!-- Sección: La Enfermedad -->
+    <section id="enfermedad" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="img-placeholder" style="height: 400px;">
+                        
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="text-3xl font-serif font-bold mb-6 text-gray-900">¿Qué es la Leucemia Linfoblástica Aguda (LLA)?</h2>
+                    <p class="text-lg text-gray-600 mb-6">En simple: Es una enfermedad donde la sangre se llena de células "malas" que no funcionan bien y desplazan a las buenas.</p>
+                    
+                    <p class="text-gray-600 mb-4">Es un tipo de cáncer de la sangre que ocurre cuando la médula ósea empieza a producir muchos glóbulos blancos inmaduros y anormales que crecen muy rápido. Por eso, el cuerpo deja de producir correctamente:</p>
+                    
+                    <ul class="space-y-4 mb-6">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 h-8 w-8 rounded-full bg-red-100 flex items-center justify-center text-red-500 mt-1">
+                                <i class="fa-solid fa-droplet"></i>
+                            </span>
+                            <div class="ml-4">
+                                <strong class="text-gray-900 block">Glóbulos rojos</strong>
+                                <span class="text-gray-600">Su falta causa cansancio extremo y debilidad.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mt-1">
+                                <i class="fa-solid fa-band-aid"></i>
+                            </span>
+                            <div class="ml-4">
+                                <strong class="text-gray-900 block">Plaquetas</strong>
+                                <span class="text-gray-600">Provoca la aparición de moretones o sangrados fáciles.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 h-8 w-8 rounded-full bg-green-100 flex items-center justify-center text-green-500 mt-1">
+                                <i class="fa-solid fa-shield-virus"></i>
+                            </span>
+                            <div class="ml-4">
+                                <strong class="text-gray-900 block">Glóbulos blancos sanos</strong>
+                                <span class="text-gray-600">Bajan drásticamente las defensas del organismo.</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="text-gray-600 font-semibold bg-white p-4 rounded-lg border-l-4 border-brand shadow-sm">
+                        Se llama "aguda" porque avanza rápido y necesita tratamiento urgente.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: El Tratamiento (CAR-T) -->
+    <section id="tratamiento" class="py-20 bg-brand text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">La Esperanza: Terapia CAR-T</h2>
+                <p class="text-xl text-brand-light">Un tratamiento revolucionario contra el cáncer que usa tus propias defensas para combatir la enfermedad. Es como "entrenar" tu sistema inmune para que luche mejor. 💪</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl text-center border border-white/20">
+                    <i class="fa-solid fa-syringe text-4xl mb-4 text-brand-light"></i>
+                    <h3 class="text-xl font-bold mb-3">1. Extracción</h3>
+                    <p class="text-brand-light">Se extraen tus glóbulos blancos (células T) mediante un procedimiento especializado.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl text-center border border-white/20">
+                    <i class="fa-solid fa-microscope text-4xl mb-4 text-brand-light"></i>
+                    <h3 class="text-xl font-bold mb-3">2. Modificación</h3>
+                    <p class="text-brand-light">Se modifican en un laboratorio avanzado para que aprendan a reconocer el cáncer.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl text-center border border-white/20">
+                    <i class="fa-solid fa-shield-heart text-4xl mb-4 text-brand-light"></i>
+                    <h3 class="text-xl font-bold mb-3">3. Combate</h3>
+                    <p class="text-brand-light">Las células se vuelven a poner en tu cuerpo para que ataquen y eliminen la enfermedad.</p>
+                </div>
+            </div>
+
+            <div class="bg-white text-gray-900 rounded-3xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto transform -translate-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-brand flex items-center">
+                            <i class="fa-solid fa-earth-americas mr-3"></i> ¿Dónde se realiza?
+                        </h4>
+                        <p class="text-gray-600 mb-2">Se hace en hospitales muy especializados fuera de Chile, principalmente en países como:</p>
+                        <ul class="font-semibold text-lg text-gray-800 space-y-2 mb-6">
+                            <li>🇺🇸 Estados Unidos</li>
+                            <li>🇪🇸 España</li>
+                            <li>🇨🇳 China</li>
+                        </ul>
+                        <div class="bg-blue-50 text-blue-800 p-4 rounded-xl text-sm">
+                            <strong>✨ Dato importante:</strong> Se usa principalmente cuando otros tratamientos convencionales (como la quimioterapia) no han funcionado.
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 text-brand flex items-center">
+                            <i class="fa-solid fa-sack-dollar mr-3"></i> ¿Cuánto cuesta?
+                        </h4>
+                        <p class="text-gray-600 mb-4">Es uno de los tratamientos más caros del mundo por ser 100% personalizado y altamente complejo.</p>
+                        <div class="text-4xl md:text-5xl font-black text-gray-900 mb-2">300 a 500</div>
+                        <div class="text-xl font-bold text-gray-500 mb-4">Millones de pesos</div>
+                        <p class="text-gray-600 font-semibold">
+                            Es una meta gigante, pero juntos, gota a gota, podemos lograrlo y darle esta oportunidad a Marcia.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Donaciones (Cuentas y Flow) -->
+    <section id="donar" class="py-24 bg-slate-50 relative overflow-hidden">
+        <!-- Decoración de fondo -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-brand/5 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-500/5 blur-3xl"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold mb-4 text-gray-900">¿Cómo puedes ayudar?</h2>
+                <p class="text-xl text-gray-600">Cualquier aporte suma inmensamente. Elige la opción que más te acomode.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Tarjeta Mercado Pago -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 flex flex-col items-center text-center hover:shadow-2xl transition duration-300">
+                    <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-hand-holding-dollar text-4xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Pago Online (Mercado Pago)</h3>
+                    <p class="text-gray-600 mb-8 flex-grow">Aporta de forma rápida y segura usando tus tarjetas de débito o crédito desde cualquier lugar.</p>
+                    
+                    <!-- BOTÓN MERCADO PAGO -->
+                    <a href="https://link.mercadopago.cl/todosxmarcia" target="_blank" rel="noopener noreferrer" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full text-lg transition shadow-lg shadow-blue-500/30">
+                        Donar vía Mercado Pago <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <p class="text-xs text-gray-400 mt-4"><i class="fa-solid fa-lock"></i> Pago 100% seguro</p>
+                </div>
+
+                <!-- Tarjeta Transferencia -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 flex flex-col hover:shadow-2xl transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-building-columns text-2xl text-brand"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Transferencia</h3>
+                    </div>
+                    
+                    <div class="bg-slate-50 p-6 rounded-2xl flex-grow space-y-3 text-lg">
+                        <div class="flex justify-between border-b border-gray-200 pb-2">
+                            <span class="text-gray-500">Nombre:</span>
+                            <strong class="text-gray-900 text-right">Marcia Andrea Gómez Gallardo</strong>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-200 pb-2">
+                            <span class="text-gray-500">RUT:</span>
+                            <strong class="text-gray-900">15.296.589-3</strong>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-200 pb-2">
+                            <span class="text-gray-500">Banco:</span>
+                            <strong class="text-gray-900">Mercado Pago</strong>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-200 pb-2">
+                            <span class="text-gray-500">Tipo:</span>
+                            <strong class="text-gray-900">Cuenta Vista</strong>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-200 pb-2">
+                            <span class="text-gray-500">Número:</span>
+                            <strong class="text-gray-900">1007498304</strong>
+                        </div>
+                        <div class="flex justify-between pt-1 text-sm md:text-base">
+                            <span class="text-gray-500">Correo:</span>
+                            <strong class="text-gray-900">todosxmarcia@gmail.com</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to action para compartir -->
+            <div class="mt-16 bg-brand-light rounded-3xl p-8 md:p-12 text-center">
+                <i class="fa-solid fa-share-nodes text-4xl text-brand mb-4"></i>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Si no puedes donar, ¡Comparte! 📲</h3>
+                <p class="text-gray-700 text-lg mb-6 max-w-2xl mx-auto">Difundir esta campaña en tus redes sociales, grupos de WhatsApp o con tus cercanos es una ayuda gigantesca.</p>
+                <a href="https://www.instagram.com/todosxmarcia" target="_blank" class="inline-flex items-center text-brand font-bold text-xl hover:text-brand-dark transition">
+                    <i class="fa-brands fa-instagram text-3xl mr-3"></i> @todosxmarcia
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Transparencia (Exámenes y Documentos) -->
+    <section id="transparencia" class="py-20 bg-slate-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <i class="fa-solid fa-file-medical text-5xl text-brand mb-4"></i>
+                <h2 class="text-3xl font-serif font-bold mb-4 text-gray-900">Transparencia y Exámenes</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Sabemos que la meta es muy alta, por eso para nosotros es fundamental tu confianza. Aquí puedes revisar los documentos médicos que respaldan la urgencia de esta campaña.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Documento 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-200 text-center flex flex-col h-full">
+                    <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-file-pdf text-2xl text-brand"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Examen / Biopsia</h3>
+                    <p class="text-sm text-gray-500 flex-grow mb-4">Confirmación médica de la recaída (10/04/2025).</p>
+                    <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg transition border border-gray-300" onclick="alert('Aquí puedes enlazar tu PDF en el código web')">
+                        <i class="fa-solid fa-eye mr-2"></i> Ver documento
+                    </button>
+                </div>
+                <!-- Documento 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-200 text-center flex flex-col h-full">
+                    <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-file-invoice-dollar text-2xl text-brand"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Cotización CAR-T</h3>
+                    <p class="text-sm text-gray-500 flex-grow mb-4">Presupuesto estimado del tratamiento en el extranjero.</p>
+                    <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg transition border border-gray-300" onclick="alert('Aquí puedes enlazar tu PDF en el código web')">
+                        <i class="fa-solid fa-eye mr-2"></i> Ver documento
+                    </button>
+                </div>
+                <!-- Documento 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-200 text-center flex flex-col h-full">
+                    <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-stethoscope text-2xl text-brand"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Orden Médica</h3>
+                    <p class="text-sm text-gray-500 flex-grow mb-4">Indicación y derivación del equipo oncológico tratante.</p>
+                    <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg transition border border-gray-300" onclick="alert('Aquí puedes enlazar tu PDF en el código web')">
+                        <i class="fa-solid fa-eye mr-2"></i> Ver documento
+                    </button>
+                </div>
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-6">* Por privacidad y seguridad, algunos datos personales o RUT médicos podrían estar ocultos en estos documentos.</p>
+        </div>
+    </section>
+
+    <!-- Sección: Galería (Fotos y Videos de RRSS) -->
+    <section id="galeria" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold mb-4 text-gray-900">Campaña en Redes Sociales</h2>
+                <p class="text-gray-600 text-lg">Acompáñanos en este proceso. Aquí puedes ver nuestras actualizaciones directamente desde <a href="https://www.instagram.com/todosxmarcia/" target="_blank" class="text-brand font-bold hover:underline">@todosxmarcia</a>.</p>
+            </div>
+
+            <!-- Grid de galería con incrustaciones de Instagram -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+                
+                <!-- Post 1 (Duplicamos el Hero o pones otro reel) -->
+                <div class="w-full max-w-sm">
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DW_zlvrCUfB/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:100%;">
+                        <div style="padding:16px;">
+                            <div class="img-placeholder" style="border:none; background:transparent;">
+                                <span class="text-sm">Cargando publicación...</span>
+                            </div>
+                        </div>
+                    </blockquote>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="w-full max-w-sm">
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/todosxmarcia/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:100%;">
+                        <div style="padding:16px;">
+                            <div class="img-placeholder" style="border:none; background:transparent;">
+                                <span class="text-sm">Publicación 2<br>(Reemplaza el link en el código)</span>
+                            </div>
+                        </div>
+                    </blockquote>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="w-full max-w-sm">
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/todosxmarcia/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:100%;">
+                        <div style="padding:16px;">
+                            <div class="img-placeholder" style="border:none; background:transparent;">
+                                <span class="text-sm">Publicación 3<br>(Reemplaza el link en el código)</span>
+                            </div>
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="https://www.instagram.com/todosxmarcia/" target="_blank" class="text-brand font-bold hover:underline text-lg">
+                    Ver todos los videos en Instagram <i class="fa-solid fa-arrow-up-right-from-square text-sm ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-serif font-bold text-2xl mb-6">❤️ #TodosxMarcia</h2>
+            <p class="text-gray-400 mb-8 max-w-2xl mx-auto">Gracias de corazón a todos quienes han estado desde el inicio de este camino y a quienes se suman hoy. Juntos podemos darle una nueva oportunidad a Marcia.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.instagram.com/todosxmarcia/" target="_blank" class="text-gray-400 hover:text-white transition text-2xl">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="mailto:todosxmarcia@gmail.com" class="text-gray-400 hover:text-white transition text-2xl">
+                    <i class="fa-regular fa-envelope"></i>
+                </a>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8 text-sm text-gray-500">
+                &copy; <script>document.write(new Date().getFullYear())</script> Campaña Todos x Marcia.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+```

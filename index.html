@@ -102,11 +102,8 @@
 
     <!-- Sticky Footer para Móvil -->
     <div class="md:hidden fixed bottom-0 left-0 w-full p-4 glass-nav border-t border-gray-100 z-[60] flex gap-3 sticky-footer shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
-        <a href="https://link.mercadopago.cl/todosxmarcia" target="_blank" class="flex-[1.5] bg-blue-500 text-white text-center py-4 rounded-2xl font-black text-sm uppercase tracking-tighter shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
-            <i class="fa-solid fa-wallet"></i> Mercado Pago
-        </a>
-        <a href="#donar" class="flex-1 bg-brand text-white text-center py-4 rounded-2xl font-black text-sm uppercase tracking-tighter shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
-            <i class="fa-solid fa-building-columns"></i> Datos
+        <a href="#donar" class="w-full bg-brand text-white text-center py-4 rounded-2xl font-black text-sm uppercase tracking-tighter shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
+            <i class="fa-solid fa-heart"></i> Ayudar Ahora
         </a>
     </div>
 
@@ -365,79 +362,36 @@
                 <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-medium">Tu donación, por pequeña que sea, nos permite estar un paso más cerca de la meta.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-                <!-- Mercado Pago -->
-                <div class="bg-blue-50 rounded-[3.5rem] p-8 md:p-10 text-center flex flex-col border-2 border-blue-100 shadow-sm hover:shadow-2xl transition-all duration-500">
-                    <div class="mb-6 flex justify-center"><i class="fa-solid fa-wallet text-6xl text-blue-500"></i></div>
-                    <h3 class="text-3xl font-black text-blue-900 mb-4 uppercase tracking-tight">Mercado Pago</h3>
-                    <p class="text-blue-700 text-base md:text-lg mb-8 flex-grow leading-relaxed font-bold">Dona con tarjetas de débito, crédito o saldo en cuenta de forma instantánea.</p>
-                    <a href="https://link.mercadopago.cl/todosxmarcia" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white font-black py-4 px-6 rounded-[2rem] text-xl shadow-2xl shadow-blue-500/30 active:scale-95 transition-all flex items-center justify-center gap-3 tracking-tighter uppercase">
-                        DONAR AHORA <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Transferencia Bancaria MP -->
-                <div class="bg-slate-50 rounded-[3.5rem] p-8 md:p-10 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 text-left flex flex-col">
-                    <div class="flex items-center gap-4 mb-8 justify-center md:justify-start">
-                        <div class="bg-brand text-white p-4 rounded-[1.5rem] shadow-lg"><i class="fa-solid fa-building-columns text-xl"></i></div>
-                        <h3 class="text-xl font-black text-gray-800 uppercase tracking-tight">Transferencia MP</h3>
-                    </div>
-                    <div class="space-y-4 flex-grow">
-                        <div class="flex flex-col border-b border-gray-200 pb-3">
-                            <span class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] mb-1 italic">Titular</span>
-                            <span class="font-bold text-gray-900 text-lg leading-tight">Marcia Andrea Gómez Gallardo</span>
-                        </div>
-                        <div class="flex flex-col border-b border-gray-200 pb-3">
-                            <span class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] mb-1 italic">RUT</span>
-                            <span class="font-bold text-gray-900 text-lg leading-tight tracking-tighter">15.296.589-3</span>
-                        </div>
-                        <div class="flex flex-col border-b border-gray-200 pb-3">
-                            <span class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] mb-1 italic">Banco / Cuenta</span>
-                            <span class="font-bold text-gray-900 text-lg leading-tight">Mercado Pago / Vista</span>
-                        </div>
-                        <div class="flex flex-col border-b border-gray-200 pb-3">
-                            <span class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] mb-1 italic font-black text-brand">Número de Cuenta</span>
-                            <span class="font-black text-2xl text-brand tracking-tighter">1007498304</span>
-                        </div>
-                        <div class="pt-2 text-center">
-                            <span class="text-[10px] font-black uppercase text-gray-400 tracking-widest block mb-1">Correo</span>
-                            <span class="font-black text-gray-700 text-sm">todosxmarcia@gmail.com</span>
-                        </div>
-                    </div>
-                    <button onclick="copyData('mercadopago')" class="mt-6 w-full bg-slate-200 hover:bg-slate-300 text-gray-800 font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-xs active:scale-95">
-                        <i class="fa-regular fa-copy"></i> Copiar Datos
-                    </button>
-                </div>
-
+            <div class="max-w-2xl mx-auto">
                 <!-- Transferencia Banco Estado -->
                 <div class="bg-slate-50 rounded-[3.5rem] p-8 md:p-10 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 text-left flex flex-col">
                     <div class="flex items-center gap-4 mb-8 justify-center md:justify-start">
                         <div class="bg-blue-600 text-white p-4 rounded-[1.5rem] shadow-lg"><i class="fa-solid fa-building-columns text-xl"></i></div>
-                        <h3 class="text-xl font-black text-gray-800 uppercase tracking-tight">Banco Estado</h3>
+                        <h3 class="text-2xl font-black text-gray-800 uppercase tracking-tight">Banco Estado</h3>
                     </div>
                     <div class="space-y-4 flex-grow">
                         <div class="flex flex-col border-b border-gray-200 pb-3">
                             <span class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] mb-1 italic">Titular</span>
-                            <span class="font-bold text-gray-900 text-lg leading-tight">Marcia Gallardo</span>
+                            <span class="font-bold text-gray-900 text-xl leading-tight">Marcia Gallardo</span>
                         </div>
                         <div class="flex flex-col border-b border-gray-200 pb-3">
                             <span class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] mb-1 italic">RUT</span>
-                            <span class="font-bold text-gray-900 text-lg leading-tight tracking-tighter">15.296.589-3</span>
+                            <span class="font-bold text-gray-900 text-xl leading-tight tracking-tighter">15.296.589-3</span>
                         </div>
                         <div class="flex flex-col border-b border-gray-200 pb-3">
                             <span class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] mb-1 italic">Banco / Cuenta</span>
-                            <span class="font-bold text-gray-900 text-lg leading-tight">Banco Estado / Cta RUT</span>
+                            <span class="font-bold text-gray-900 text-xl leading-tight">Banco Estado / Cta RUT</span>
                         </div>
                         <div class="flex flex-col border-b border-gray-200 pb-3">
                             <span class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] mb-1 italic font-black text-blue-600">Número de Cuenta</span>
-                            <span class="font-black text-2xl text-blue-600 tracking-tighter">15296589</span>
+                            <span class="font-black text-3xl text-blue-600 tracking-tighter">15296589</span>
                         </div>
-                        <div class="pt-2 text-center">
+                        <div class="pt-4 text-center">
                             <span class="text-[10px] font-black uppercase text-gray-400 tracking-widest block mb-1">Correo</span>
-                            <span class="font-black text-gray-700 text-sm">todosxmarcia@gmail.com</span>
+                            <span class="font-black text-gray-700 text-base">todosxmarcia@gmail.com</span>
                         </div>
                     </div>
-                    <button onclick="copyData('bancoestado')" class="mt-6 w-full bg-slate-200 hover:bg-slate-300 text-gray-800 font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-xs active:scale-95">
+                    <button onclick="copyData('bancoestado')" class="mt-8 w-full bg-slate-200 hover:bg-slate-300 text-gray-800 font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-sm active:scale-95">
                         <i class="fa-regular fa-copy"></i> Copiar Datos
                     </button>
                 </div>
@@ -493,9 +447,7 @@
         function copyData(bankType) {
             let textToCopy = "";
             
-            if (bankType === 'mercadopago') {
-                textToCopy = "Nombre: Marcia Andrea Gómez Gallardo\nRUT: 15.296.589-3\nBanco: Mercado Pago\nTipo de cuenta: Vista\nNúmero de cuenta: 1007498304\nCorreo: todosxmarcia@gmail.com";
-            } else if (bankType === 'bancoestado') {
+            if (bankType === 'bancoestado') {
                 textToCopy = "Nombre: Marcia Gallardo\nRUT: 15.296.589-3\nBanco: Banco Estado\nTipo de cuenta: Cuenta RUT\nNúmero de cuenta: 15296589\nCorreo: todosxmarcia@gmail.com";
             }
 

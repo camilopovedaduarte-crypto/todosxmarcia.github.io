@@ -487,13 +487,29 @@
                             </div>
                             
                             <div class="w-full md:w-1/2">
-                                <div class="flex justify-between text-xs font-black text-gray-500 mb-2 uppercase tracking-widest">
-                                    <span>Progreso</span>
-                                    <span class="text-brand">27.08%</span>
+                                <div class="flex justify-between items-end mb-2 uppercase tracking-widest">
+                                    <span class="text-[10px] md:text-xs font-black text-cyan-600">Llevamos</span>
+                                    <span class="text-[10px] md:text-xs font-black text-red-500">Falta</span>
                                 </div>
-                                <div class="w-full bg-gray-200 rounded-full h-5 overflow-hidden shadow-inner relative">
-                                    <div class="bg-gradient-to-r from-brand to-brand-dark h-full rounded-full relative transition-all duration-1000 ease-out" style="width: 27.08%">
+                                <div class="w-full bg-red-100 border border-red-200 rounded-full h-7 md:h-8 overflow-hidden shadow-inner relative">
+                                    <div class="absolute inset-0 flex items-center justify-end pr-4 pointer-events-none">
+                                        <span class="text-[10px] md:text-xs font-black text-red-500/80 tracking-widest">72.92%</span>
+                                    </div>
+                                    <div class="bg-gradient-to-r from-cyan-400 to-cyan-600 h-full rounded-full relative transition-all duration-1000 ease-out flex items-center justify-end pr-3 shadow-[3px_0_10px_rgba(0,0,0,0.15)]" style="width: 27.08%">
                                         <div class="w-full h-full absolute top-0 left-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMiI+PC9yZWN0Pjwvc3ZnPg==')] opacity-30 mix-blend-overlay"></div>
+                                        <span class="text-[10px] md:text-xs font-black text-white relative z-10 drop-shadow-md">27.08%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6 p-4 bg-red-50 border-2 border-red-200 rounded-2xl relative shadow-sm">
+                                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2">
+                                        <span class="bg-red-600 text-white text-[10px] md:text-xs px-4 py-1.5 rounded-full font-black uppercase tracking-[0.2em] animate-pulse shadow-lg flex items-center gap-2 whitespace-nowrap">
+                                            <i class="fa-solid fa-clock"></i> ¡URGENTE!
+                                        </span>
+                                    </div>
+                                    <div class="flex flex-col justify-center items-center mt-2 gap-1 text-center">
+                                        <span class="text-2xl md:text-3xl font-black text-red-600 tracking-tighter">Faltan $218.762.228</span>
+                                        <span class="text-sm font-black text-red-500 uppercase tracking-widest mt-1">72.92% Restante</span>
                                     </div>
                                 </div>
                             </div>

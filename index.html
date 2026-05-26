@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todos x Marcia - Campaña Solidaria</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <script>
@@ -90,12 +93,14 @@
 </head>
 <body class="font-sans text-gray-800 bg-white antialiased">
 
+    <!-- Banner Infinito -->
     <div class="marquee-container shadow-md">
         <div class="marquee-content uppercase font-black tracking-widest">
             SUMATE A NUESTRA CAUSA ❤️ TODOS X MARCIA ❤️ TU APORTE ES FUNDAMENTAL 🕊️ SUMATE A NUESTRA CAUSA ❤️ TODOS X MARCIA ❤️ TU APORTE ES FUNDAMENTAL 🕊️ SUMATE A NUESTRA CAUSA ❤️ TODOS X MARCIA ❤️ TU APORTE ES FUNDAMENTAL 🕊️
         </div>
     </div>
 
+    <!-- Sticky Footer para Móvil -->
     <div class="md:hidden fixed bottom-0 left-0 w-full p-4 glass-nav border-t border-gray-100 z-[60] flex gap-3 sticky-footer shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
         <a href="https://link.mercadopago.cl/todosxmarcia" target="_blank" class="flex-[1.5] bg-blue-500 text-white text-center py-4 rounded-2xl font-black text-sm uppercase tracking-tighter shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
             <i class="fa-solid fa-wallet"></i> Mercado Pago
@@ -105,6 +110,7 @@
         </a>
     </div>
 
+    <!-- Navbar con Íconos de Donación -->
     <nav class="fixed w-full glass-nav shadow-sm z-50">
         <div class="max-w-6xl mx-auto px-4 lg:px-6">
             <div class="flex justify-between items-center h-16 md:h-20">
@@ -112,39 +118,65 @@
                    <span class="text-2xl md:text-3xl">❤️</span> <span class="hidden sm:inline">#TodosxMarcia</span><span class="sm:hidden">Marcia</span>
                 </a>
                 
-                <div class="flex items-center gap-1.5 md:gap-3">
+                <!-- Íconos de Donación Rápidos -->
+                <div class="flex items-center gap-2 md:gap-3">
                     <span class="hidden md:block text-xs font-black text-gray-400 uppercase tracking-widest mr-2">Aportar:</span>
-                    <a href="https://link.mercadopago.cl/todosxmarcia" target="_blank" title="Link MercadoPago" class="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-blue-100 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white hover:scale-110 transition-all shadow-sm">
-                        <i class="fa-solid fa-link text-sm md:text-base"></i>
+                    <a href="https://link.mercadopago.cl/todosxmarcia" target="_blank" title="Link MercadoPago" class="flex items-center justify-center w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-blue-400 to-blue-600 text-white rounded-full hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] border border-white/40">
+                        <i class="fa-solid fa-link text-sm md:text-base drop-shadow-md"></i>
                     </a>
-                    <a href="#donar" title="Cuenta MercadoPago" class="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-sky-100 text-sky-500 rounded-full hover:bg-sky-500 hover:text-white hover:scale-110 transition-all shadow-sm">
-                        <i class="fa-solid fa-wallet text-sm md:text-base"></i>
+                    <a href="#donar" title="Cuenta MercadoPago" class="flex items-center justify-center w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-sky-400 to-sky-600 text-white rounded-full hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(14,165,233,0.5)] border border-white/40">
+                        <i class="fa-solid fa-wallet text-sm md:text-base drop-shadow-md"></i>
                     </a>
-                    <a href="#donar" title="Cuenta BCI" class="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-green-100 text-green-600 rounded-full hover:bg-green-600 hover:text-white hover:scale-110 transition-all shadow-sm">
-                        <i class="fa-solid fa-building-columns text-sm md:text-base"></i>
+                    <a href="#donar" title="Cuenta BCI" class="flex items-center justify-center w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(34,197,94,0.5)] border border-white/40">
+                        <i class="fa-solid fa-building-columns text-sm md:text-base drop-shadow-md"></i>
                     </a>
-                    <a href="#donar" title="Banco Estado" class="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-700 hover:text-white hover:scale-110 transition-all shadow-sm">
-                        <i class="fa-solid fa-building-columns text-sm md:text-base"></i>
+                    <a href="#donar" title="Banco Estado" class="flex items-center justify-center w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-indigo-500 to-indigo-700 text-white rounded-full hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(99,102,241,0.5)] border border-white/40">
+                        <i class="fa-solid fa-building-columns text-sm md:text-base drop-shadow-md"></i>
                     </a>
-                    <a href="#donar" title="Global 66" class="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-emerald-100 text-emerald-600 rounded-full hover:bg-emerald-600 hover:text-white hover:scale-110 transition-all shadow-sm">
-                        <i class="fa-solid fa-globe text-sm md:text-base"></i>
+                    <a href="#donar" title="Global 66" class="flex items-center justify-center w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white rounded-full hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.5)] border border-white/40">
+                        <i class="fa-solid fa-globe text-sm md:text-base drop-shadow-md"></i>
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section class="relative pt-24 pb-16 md:pt-40 md:pb-24 bg-brand-light/20 overflow-hidden">
-        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-12 md:pt-28 md:pb-16 bg-brand-light/20 overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 md:px-6 relative z-10 text-center">
             
-            <div class="mb-8 md:mb-12">
+            <!-- BOTONES DE NAVEGACIÓN (Arriba del título principal) -->
+            <div class="flex flex-wrap justify-center items-center gap-3 md:gap-4 xl:gap-5 mb-8 md:mb-10 mt-4">
+                <a href="#historia" class="bg-gradient-to-r from-brand to-rose-600 text-white px-5 md:px-7 py-3 md:py-3.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(225,29,72,0.6)] hover:shadow-[0_12px_25px_-6px_rgba(225,29,72,0.8)] hover:-translate-y-1 border border-rose-400/30 backdrop-blur-sm">
+                    <span class="drop-shadow-md">¿Quién es Marcia?</span>
+                </a>
+                <a href="#tratamiento" class="bg-gradient-to-r from-brand to-rose-600 text-white px-5 md:px-7 py-3 md:py-3.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(225,29,72,0.6)] hover:shadow-[0_12px_25px_-6px_rgba(225,29,72,0.8)] hover:-translate-y-1 border border-rose-400/30 backdrop-blur-sm">
+                    <span class="drop-shadow-md">Tratamiento CAR-T</span>
+                </a>
+                <a href="#computo" class="bg-gradient-to-r from-brand to-rose-600 text-white px-5 md:px-7 py-3 md:py-3.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(225,29,72,0.6)] hover:shadow-[0_12px_25px_-6px_rgba(225,29,72,0.8)] hover:-translate-y-1 border border-rose-400/30 backdrop-blur-sm">
+                    <span class="drop-shadow-md">Cómputo</span>
+                </a>
+                <a href="#cancion" class="bg-gradient-to-r from-brand to-rose-600 text-white px-5 md:px-7 py-3 md:py-3.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(225,29,72,0.6)] hover:shadow-[0_12px_25px_-6px_rgba(225,29,72,0.8)] hover:-translate-y-1 border border-rose-400/30 backdrop-blur-sm">
+                    <span class="drop-shadow-md">Videoclip</span>
+                </a>
+                <a href="#donar" class="bg-gradient-to-r from-brand to-rose-600 text-white px-5 md:px-7 py-3 md:py-3.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(225,29,72,0.6)] hover:shadow-[0_12px_25px_-6px_rgba(225,29,72,0.8)] hover:-translate-y-1 border border-rose-400/30 backdrop-blur-sm">
+                    <span class="drop-shadow-md">Cómo Donar</span>
+                </a>
+                <a href="#transparencia" class="bg-gradient-to-r from-brand to-rose-600 text-white px-5 md:px-7 py-3 md:py-3.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(225,29,72,0.6)] hover:shadow-[0_12px_25px_-6px_rgba(225,29,72,0.8)] hover:-translate-y-1 border border-rose-400/30 backdrop-blur-sm">
+                    <span class="drop-shadow-md">Biopsia</span>
+                </a>
+            </div>
+
+            <!-- Título Principal -->
+            <div class="mb-6 md:mb-8">
                 <span class="inline-block py-1 px-4 rounded-full bg-brand/10 text-brand font-black text-[10px] md:text-xs uppercase tracking-[0.2em] mb-4">Campaña Solidaria Urgente</span>
-                <h1 class="text-4xl md:text-7xl font-serif font-black leading-[1.1] mb-4 text-gray-900 text-balance">
+                <h1 class="text-4xl md:text-6xl font-serif font-black leading-[1.1] mb-4 text-gray-900 text-balance">
                     Acompañemos a Marcia en su lucha por la vida
                 </h1>
             </div>
 
-            <div class="mb-10 md:mb-14 flex justify-center">
+            <!-- Foto Principal -->
+            <div class="mb-8 md:mb-10 flex justify-center">
                 <div class="relative group">
                     <div class="absolute inset-0 bg-brand/20 rounded-[3rem] blur-2xl transform scale-90 group-hover:scale-100 transition-transform duration-700"></div>
                     <img src="https://cdn.shopify.com/s/files/1/0892/7710/4449/files/Captura_de_pantalla_2026-04-11_a_las_6.05.48_p._m..png?v=1775945192" 
@@ -154,12 +186,12 @@
             </div>
 
             <div class="w-full">
-                <p class="text-xl md:text-3xl text-gray-600 mb-10 leading-relaxed font-medium max-w-2xl mx-auto">
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed font-medium max-w-2xl mx-auto">
                     Marcia ha tenido una recaída y su única esperanza es un tratamiento en el extranjero. <strong>Juntos podemos lograrlo.</strong>
                 </p>
 
-                <!-- MARCADOR DE META TIPO TELETÓN (MOVIDO ARRIBA) -->
-                <div class="max-w-2xl mx-auto mb-8 bg-white p-6 md:p-10 rounded-[3rem] shadow-2xl border-4 border-brand/20 relative overflow-hidden text-center transform hover:scale-[1.02] transition-transform duration-300">
+                <!-- MARCADOR DE META TIPO TELETÓN (CÓMPUTO) -->
+                <div id="computo" class="max-w-2xl mx-auto mb-8 bg-white p-6 md:p-10 rounded-[3rem] shadow-2xl border-4 border-brand/20 relative overflow-hidden text-center transform hover:scale-[1.02] transition-transform duration-300 scroll-mt-24">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-brand-light/30 rounded-full blur-3xl -mr-20 -mt-20"></div>
                     <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl -ml-20 -mb-20"></div>
                     
@@ -214,16 +246,48 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                     <a href="#donar" class="bg-brand text-white py-5 px-12 rounded-3xl font-black text-xl md:text-2xl shadow-2xl shadow-brand/40 active:scale-95 transition-transform uppercase tracking-wider">
                         <i class="fa-solid fa-heart mr-3"></i> Ayudar Ahora
                     </a>
                 </div>
 
-                <!-- NUEVA SECCIÓN: CURSO ADIPA -->
-                <div class="mb-16 w-full max-w-5xl mx-auto text-left">
-                    <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-[3rem] shadow-2xl border-2 border-indigo-100 overflow-hidden relative">
+                <!-- NUEVA SECCIÓN: VIDEOCLIP OFICIAL -->
+                <div id="cancion" class="mb-16 w-full max-w-4xl mx-auto scroll-mt-24">
+                    <div class="bg-white rounded-[3rem] p-6 md:p-10 shadow-2xl border border-gray-100 text-center relative overflow-hidden group">
+                        <!-- Decoración de fondo -->
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-rose-100 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
+                        <div class="absolute bottom-0 left-0 w-32 h-32 bg-brand-light rounded-full blur-3xl -ml-10 -mb-10 pointer-events-none"></div>
                         
+                        <div class="relative z-10">
+                            <span class="inline-flex items-center justify-center gap-2 bg-rose-100 text-brand px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-4">
+                                <i class="fa-solid fa-music animate-bounce"></i> Videoclip Oficial
+                            </span>
+                            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4 text-gray-900 tracking-tight">El Himno de Nuestra Campaña</h2>
+                            <p class="text-gray-600 mb-8 max-w-2xl mx-auto font-medium md:text-lg text-balance">Una canción hecha con todo el corazón para darle fuerzas a Marcia. <strong class="text-brand">¡Sube el volumen y acompáñanos!</strong></p>
+                            
+                            <!-- Contenedor del reproductor (formato vertical 9:16) -->
+                            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black group-hover:shadow-[0_20px_50px_rgba(225,29,72,0.3)] transition-all duration-500 max-w-sm mx-auto">
+                                <video id="video-oficial" controls class="w-full aspect-[9/16] object-contain bg-black" poster="https://cdn.shopify.com/s/files/1/0892/7710/4449/files/Captura_de_pantalla_2026-04-11_a_las_6.05.48_p._m..png?v=1775945192" preload="auto">
+                                    <source src="https://cdn.shopify.com/videos/c/o/v/42470be480df491db8abbb5173af97cc.mp4" type="video/mp4">
+                                    Tu navegador no soporta la etiqueta de video.
+                                </video>
+                                
+                                <!-- Overlay para forzar Play (Requisito de navegadores móviles para el sonido) -->
+                                <div id="play-overlay" class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center cursor-pointer transition-opacity duration-500 hover:bg-black/60 backdrop-blur-[2px]">
+                                    <div class="w-20 h-20 md:w-24 md:h-24 bg-brand text-white rounded-full flex items-center justify-center text-3xl md:text-4xl shadow-[0_0_40px_rgba(225,29,72,0.8)] mb-4 animate-pulse transform group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-play ml-2"></i>
+                                    </div>
+                                    <span class="text-white font-black tracking-widest uppercase text-sm md:text-base drop-shadow-md text-center px-4">Toca para reproducir canción</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN CURSO ADIPA -->
+                <div class="mb-12 w-full max-w-5xl mx-auto text-left">
+                    <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-[3rem] shadow-2xl border-2 border-indigo-100 overflow-hidden relative">
                         <!-- Banner Header ADIPA -->
                         <div class="bg-gradient-to-r from-indigo-600 to-purple-600 py-4 px-6 text-center shadow-md relative z-10">
                             <h3 class="text-white font-black text-lg md:text-2xl uppercase tracking-widest flex items-center justify-center gap-3">
@@ -249,7 +313,7 @@
                                 </a>
                             </div>
 
-                            <!-- Tabla Info Derecha (Captura) -->
+                            <!-- Tabla Info Derecha -->
                             <div class="w-full lg:w-1/2 bg-white rounded-[2rem] p-6 md:p-8 shadow-md border border-gray-100 relative">
                                 <h5 class="text-sm font-black text-gray-900 uppercase tracking-widest mb-5 border-b border-gray-100 pb-4 text-center md:text-left">Información del Programa</h5>
                                 <ul class="space-y-4 text-sm md:text-base text-gray-700">
@@ -295,26 +359,25 @@
                     </div>
                 </div>
 
-                <div class="mb-10 bg-brand-light/50 border border-brand/20 p-6 md:p-8 rounded-3xl text-center shadow-sm transform hover:scale-[1.02] transition-transform duration-300 max-w-3xl mx-auto">
+                <!-- Agradecimiento y Medios -->
+                <div class="mb-8 bg-brand-light/50 border border-brand/20 p-6 md:p-8 rounded-3xl text-center shadow-sm transform hover:scale-[1.02] transition-transform duration-300 max-w-3xl mx-auto">
                     <p class="text-base md:text-lg text-gray-800 font-medium leading-relaxed">
                         <i class="fa-solid fa-heart text-brand mr-2 animate-pulse"></i>
                         Queremos dar un agradecimiento especial a <strong class="font-black text-brand">Meganoticias</strong> (Rodrigo Sepúlveda), a <strong class="font-black text-brand">Chilevisión Noticias</strong> y a todos los equipos periodísticos por visibilizar nuestra campaña. ¡Gracias por ayudarnos a que más personas se sumen!
                     </p>
                 </div>
 
-                <div class="mb-16 w-full max-w-5xl mx-auto">
-                    <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-8 uppercase tracking-tighter flex items-center justify-center gap-3">
+                <div class="mb-12 w-full max-w-5xl mx-auto">
+                    <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-6 uppercase tracking-tighter flex items-center justify-center gap-3">
                         <i class="fa-solid fa-microphone-lines text-brand"></i> Marcia en los Medios
                     </h3>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-                        
                         <div class="flex flex-col justify-between w-full overflow-hidden rounded-[2.5rem] shadow-2xl border-4 border-white bg-white transform hover:-translate-y-1 transition-transform duration-300">
                             <div class="bg-gray-100 py-3 text-center border-b border-gray-200">
                                 <h4 class="text-sm font-black text-purple-700 uppercase tracking-widest"><i class="fa-brands fa-instagram"></i> Mega</h4>
                             </div>
                             <iframe src="https://www.instagram.com/reel/DXP_mgsgQL4/embed" class="w-full h-[500px] md:h-[580px] border-0" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media"></iframe>
-                            
                             <div class="w-full bg-gray-50 p-5 border-t border-gray-100 mt-auto">
                                 <a href="https://www.instagram.com/reel/DXP_mgsgQL4/" target="_blank" class="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white font-black py-4 px-6 rounded-2xl shadow-lg active:scale-95 transition-all flex items-center justify-center gap-2 uppercase tracking-wide text-sm">
                                     <i class="fa-brands fa-instagram text-xl"></i> Comentar Reel
@@ -338,11 +401,28 @@
                                 <p class="text-xs text-gray-500 mt-3 font-bold italic leading-tight text-center">Comparte este artículo con tus contactos.</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-                <div id="donar" class="mb-20 pt-4 scroll-mt-24 w-full">
+                <!-- SECCIÓN CANCIÓN OFICIAL -->
+                <div class="mb-16 w-full max-w-4xl mx-auto text-center">
+                    <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-6 uppercase tracking-tighter flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-music text-brand animate-bounce"></i> Canción Oficial
+                    </h3>
+                    
+                    <div class="bg-white rounded-[2.5rem] p-4 md:p-8 shadow-2xl border-4 border-brand/10 transform hover:scale-[1.01] transition-transform duration-300">
+                        <div class="rounded-[2rem] overflow-hidden bg-gray-900 shadow-inner relative flex justify-center">
+                            <video controls class="w-full h-auto max-h-[600px] object-contain" preload="metadata">
+                                <source src="https://cdn.shopify.com/videos/c/o/v/42470be480df491db8abbb5173af97cc.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                        </div>
+                        <p class="mt-6 text-gray-700 font-bold italic text-sm md:text-base px-4">"Una canción que nos llena de fuerza y esperanza. ¡Sube el volumen y compártela!" 🎶❤️</p>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN CUENTAS PARA DONAR -->
+                <div id="donar" class="mb-12 pt-2 scroll-mt-24 w-full">
                     <div class="text-center mb-8">
                         <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4 text-gray-900 tracking-tighter italic">¿Cómo aportar?</h2>
                         <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-medium">Tu donación, por pequeña que sea, nos permite estar un paso más cerca de la meta.</p>
@@ -398,6 +478,7 @@
                             </div>
                         </div>
 
+                        <!-- Cuentas Bancarias -->
                         <div class="bg-white rounded-[2.5rem] p-6 md:p-8 border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col">
                             <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
                                 <div class="bg-sky-500 text-white p-3 rounded-xl shadow-md"><i class="fa-solid fa-building-columns text-lg"></i></div>
@@ -532,7 +613,8 @@
         </div>
     </section>
 
-    <section id="historia" class="py-20 md:py-32 bg-white">
+    <!-- Sección Historia -->
+    <section id="historia" class="py-16 md:py-24 bg-white scroll-mt-24">
         <div class="max-w-3xl mx-auto px-8 text-center">
             <h2 class="text-7xl md:text-9xl font-cursive text-brand mb-14 block">Todos x Marcia</h2>
             <div class="text-xl md:text-2xl text-gray-700 leading-relaxed space-y-10 italic font-medium">
@@ -548,7 +630,8 @@
         </div>
     </section>
 
-    <section id="enfermedad" class="py-20 bg-slate-50 overflow-hidden">
+    <!-- Información de la Leucemia (Completa) -->
+    <section id="enfermedad" class="py-16 bg-slate-50 overflow-hidden">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-16">
                 <div class="w-full md:w-1/2 flex justify-center order-2 md:order-1 relative">
@@ -590,7 +673,8 @@
         </div>
     </section>
 
-    <section id="tratamiento" class="py-20 bg-brand text-white overflow-hidden">
+    <!-- Información del Tratamiento CAR-T -->
+    <section id="tratamiento" class="py-16 bg-brand text-white overflow-hidden scroll-mt-24">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-6xl font-serif font-bold mb-6 italic">La Esperanza: Terapia CAR-T</h2>
@@ -638,7 +722,8 @@
         </div>
     </section>
 
-    <section id="transparencia" class="py-20 bg-slate-100">
+    <!-- Transparencia Médica -->
+    <section id="transparencia" class="py-16 bg-slate-100 scroll-mt-24">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6 text-gray-900 leading-tight">Transparencia y Confianza</h2>
             <p class="text-gray-500 text-lg mb-12">Publicamos el informe médico que acredita la situación de Marcia para tu total seguridad.</p>
@@ -656,9 +741,11 @@
         </div>
     </section>
 
+    <!-- Modal de Biopsia -->
     <div id="modal-biopsia" class="hidden fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm overflow-y-auto w-full h-full">
         <div class="min-h-screen flex items-center justify-center p-4 py-10">
             <div class="relative w-full max-w-2xl bg-white rounded-3xl p-6 md:p-8 shadow-2xl">
+                <!-- Botón Cerrar Arriba -->
                 <button onclick="document.getElementById('modal-biopsia').classList.add('hidden'); document.body.style.overflow='auto';" class="absolute -top-4 -right-4 bg-brand text-white w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg border-4 border-white z-10 active:scale-95 transition-transform text-xl">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
@@ -679,7 +766,8 @@
         </div>
     </div>
 
-    <section id="apoyo" class="py-16 bg-white">
+    <!-- Sección Apoyo Redes -->
+    <section id="apoyo" class="py-12 bg-white">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <div class="text-center bg-gray-50 p-12 md:p-20 rounded-[4rem] border border-gray-100 shadow-inner">
                 <i class="fa-brands fa-instagram text-7xl text-brand mb-8 animate-bounce"></i>
@@ -692,7 +780,8 @@
         </div>
     </section>
 
-    <section id="galeria" class="py-20 bg-slate-50 pb-32 md:pb-24">
+    <!-- Galería Instagram Personalizada -->
+    <section id="galeria" class="py-16 pb-28 md:pb-20 bg-slate-50">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4 italic">Comunidad en vivo</h2>
@@ -700,9 +789,7 @@
             </div>
 
             <div class="flex justify-center">
-                <!-- Tarjeta de Perfil Personalizada (Reemplaza al embed roto de IG) -->
                 <div class="w-full max-w-sm bg-white rounded-[3rem] p-8 shadow-xl border border-gray-100 text-center transform hover:-translate-y-2 transition-transform duration-300">
-                    <!-- Anillo de Instagram -->
                     <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-tr from-yellow-400 via-brand to-purple-600 p-[3px] mb-6 shadow-lg">
                         <div class="bg-white rounded-full w-full h-full p-1">
                             <img src="https://cdn.shopify.com/s/files/1/0892/7710/4449/files/Captura_de_pantalla_2026-04-11_a_las_6.05.48_p._m..png?v=1775945192" class="w-full h-full rounded-full object-cover" alt="Todos x Marcia">
@@ -721,6 +808,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-gray-950 text-white py-24 text-center pb-40 md:pb-24">
         <h2 class="font-serif font-bold text-4xl md:text-5xl mb-12">❤️ #TodosxMarcia</h2>
         <div class="flex justify-center space-x-16 mb-12 text-5xl">
@@ -732,6 +820,7 @@
         <p class="text-gray-700 text-xs italic max-w-xs mx-auto">"Porque no quiero dejarlos solos. Voy a dar la pelea con todo."</p>
     </footer>
 
+    <!-- Toast de Notificación y Script de Copiado -->
     <div id="copy-toast" class="fixed bottom-24 md:bottom-10 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-6 py-4 rounded-full shadow-2xl z-[150] transition-opacity duration-300 opacity-0 pointer-events-none flex items-center gap-3 font-bold text-sm">
         <i class="fa-solid fa-check-circle text-green-400 text-xl"></i> Datos copiados con éxito
     </div>
@@ -752,7 +841,6 @@
                 textToCopy = "https://link.mercadopago.cl/todosxmarcia";
             }
 
-            // Uso de execCommand para compatibilidad y para evitar que salte la vista
             const textArea = document.createElement("textarea");
             textArea.value = textToCopy;
             textArea.style.position = "fixed";
@@ -781,6 +869,49 @@
                 toast.classList.remove('opacity-100');
                 toast.classList.add('opacity-0');
             }, 3000);
+        }
+
+        // --- LÓGICA DEL VIDEOCLIP Y REPRODUCCIÓN AUTOMÁTICA ---
+        const videoOficial = document.getElementById('video-oficial');
+        const playOverlay = document.getElementById('play-overlay');
+
+        function playOfficialVideo() {
+            if (videoOficial && videoOficial.paused) {
+                // Al hacer play() de esta forma, el navegador nos permite activar el sonido
+                videoOficial.play().then(() => {
+                    playOverlay.classList.add('opacity-0', 'pointer-events-none');
+                }).catch(err => {
+                    console.log("El navegador requiere que el usuario haga click sobre el video explícitamente.", err);
+                });
+            }
+            // Retiramos los detectores para que solo intente hacerlo en el primer toque
+            document.removeEventListener('click', playOfficialVideoGlobal);
+            document.removeEventListener('touchstart', playOfficialVideoGlobal);
+            document.removeEventListener('scroll', playOfficialVideoGlobal);
+        }
+
+        function playOfficialVideoGlobal() {
+            playOfficialVideo();
+        }
+
+        // 1. Escuchamos el primer toque o scroll en CUALQUIER PARTE de la página
+        document.addEventListener('click', playOfficialVideoGlobal, { once: true });
+        document.addEventListener('touchstart', playOfficialVideoGlobal, { once: true });
+        document.addEventListener('scroll', playOfficialVideoGlobal, { once: true });
+
+        // 2. Click directo en la caja de play gigante
+        if (playOverlay) {
+            playOverlay.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evitamos que se dispare doble
+                playOfficialVideo();
+            });
+        }
+
+        // 3. Si la persona usa los controles nativos del video, escondemos la pantalla negra
+        if (videoOficial) {
+            videoOficial.addEventListener('play', () => {
+                if(playOverlay) playOverlay.classList.add('opacity-0', 'pointer-events-none');
+            });
         }
     </script>
 </body>

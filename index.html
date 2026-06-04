@@ -85,6 +85,44 @@
         
         body { padding-top: 40px; }
         nav { top: 40px; }
+
+        /* Botón destacado de rifa en el encabezado */
+        .raffle-ticket-btn {
+            position: relative;
+            isolation: isolate;
+            background: linear-gradient(135deg, #fff7cc 0%, #facc15 30%, #f59e0b 58%, #b45309 100%);
+            color: #3b2203;
+            box-shadow: 0 10px 26px rgba(245, 158, 11, 0.42), inset 0 1px 0 rgba(255,255,255,0.7);
+            border: 1px solid rgba(180, 83, 9, 0.35);
+            overflow: hidden;
+        }
+        .raffle-ticket-btn::before,
+        .raffle-ticket-btn::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 13px;
+            height: 13px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 999px;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+        .raffle-ticket-btn::before { left: -7px; }
+        .raffle-ticket-btn::after { right: -7px; }
+        .raffle-ticket-btn .ticket-shine {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.5) 45%, transparent 70%);
+            transform: translateX(-120%);
+            animation: ticketShine 3.2s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes ticketShine {
+            0%, 45% { transform: translateX(-120%); }
+            70%, 100% { transform: translateX(120%); }
+        }
+
         @media (min-width: 768px) {
             body { padding-top: 44px; }
             nav { top: 44px; }
@@ -101,26 +139,37 @@
     </div>
 
     <!-- Sticky Footer para Móvil -->
-    <div class="md:hidden fixed bottom-0 left-0 w-full p-4 glass-nav border-t border-gray-100 z-[60] flex gap-3 sticky-footer shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
-        <a href="https://link.mercadopago.cl/todosxmarcia" target="_blank" class="flex-[1.5] bg-blue-500 text-white text-center py-4 rounded-2xl font-black text-sm uppercase tracking-tighter shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
-            <i class="fa-solid fa-wallet"></i> Mercado Pago
+    <div class="md:hidden fixed bottom-0 left-0 w-full px-2 py-2 glass-nav border-t border-gray-100 z-[60] flex gap-1.5 sticky-footer shadow-[0_-8px_18px_rgba(0,0,0,0.05)]">
+        <a href="https://link.mercadopago.cl/todosxmarcia" target="_blank" class="flex-1 min-w-0 bg-blue-500 text-white text-center py-2 rounded-xl font-black text-[10px] uppercase tracking-tighter shadow-md active:scale-95 transition-transform flex flex-row items-center justify-center gap-1.5 leading-none whitespace-nowrap">
+            <i class="fa-solid fa-wallet text-[12px] shrink-0"></i>
+            <span>Mercado Pago</span>
         </a>
-        <a href="#donar" class="flex-1 bg-brand text-white text-center py-4 rounded-2xl font-black text-sm uppercase tracking-tighter shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
-            <i class="fa-solid fa-building-columns"></i> Datos
+        <a href="#donar" class="flex-1 min-w-0 bg-brand text-white text-center py-2 rounded-xl font-black text-[10px] uppercase tracking-tighter shadow-md active:scale-95 transition-transform flex flex-row items-center justify-center gap-1.5 leading-none whitespace-nowrap">
+            <i class="fa-solid fa-building-columns text-[12px] shrink-0"></i>
+            <span>Datos</span>
+        </a>
+        <a href="https://rifatodosxmarcia.cl/" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-0 bg-gradient-to-br from-yellow-300 via-amber-400 to-yellow-600 text-amber-950 text-center py-2 rounded-xl font-black text-[10px] uppercase tracking-tighter shadow-md shadow-yellow-500/25 active:scale-95 transition-transform flex flex-row items-center justify-center gap-1.5 leading-none border border-yellow-200 whitespace-nowrap">
+            <i class="fa-solid fa-ticket text-[12px] shrink-0"></i>
+            <span>Rifa</span>
         </a>
     </div>
 
     <!-- Navbar con Íconos de Donación -->
     <nav class="fixed w-full glass-nav shadow-sm z-50">
         <div class="max-w-6xl mx-auto px-4 lg:px-6">
-            <div class="flex justify-between items-center h-16 md:h-20">
+            <div class="nav-inner-responsive flex justify-between items-center h-16 md:h-20 flex-wrap md:flex-nowrap">
                 <a href="#" class="font-serif font-bold text-xl md:text-3xl text-brand tracking-tight flex items-center gap-1 md:gap-2 shrink-0">
                    <span class="text-2xl md:text-3xl">❤️</span> <span class="hidden sm:inline">#TodosxMarcia</span><span class="sm:hidden">Marcia</span>
                 </a>
                 
-                <!-- Íconos de Donación Rápidos -->
-                <div class="flex items-center gap-2 md:gap-3">
-                    <span class="hidden md:block text-xs font-black text-gray-400 uppercase tracking-widest mr-2">Aportar:</span>
+                <!-- Accesos rápidos del encabezado -->
+                <div class="nav-actions-responsive flex items-center gap-2 md:gap-3">
+                    <a href="https://rifatodosxmarcia.cl/" target="_blank" rel="noopener noreferrer" title="Gran Rifa por Marcia" class="raffle-ticket-btn h-11 px-4 md:px-5 rounded-full font-black uppercase tracking-widest text-xs flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all duration-300 shrink-0">
+                        <span class="ticket-shine"></span>
+                        <i class="fa-solid fa-ticket relative z-10 text-base"></i>
+                        <span class="relative z-10 whitespace-nowrap">Gran Rifa por Marcia</span>
+                    </a>
+                    <span class="hidden lg:block text-xs font-black text-gray-400 uppercase tracking-widest mr-2">Aportar:</span>
                     <a href="https://link.mercadopago.cl/todosxmarcia" target="_blank" title="Link MercadoPago" class="flex items-center justify-center w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-blue-400 to-blue-600 text-white rounded-full hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] border border-white/40">
                         <i class="fa-solid fa-link text-sm md:text-base drop-shadow-md"></i>
                     </a>
@@ -142,7 +191,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-20 pb-12 md:pt-28 md:pb-16 bg-brand-light/20 overflow-hidden">
+    <section class="relative pt-32 pb-12 md:pt-28 md:pb-16 bg-brand-light/20 overflow-hidden">
         <div class="max-w-5xl mx-auto px-4 md:px-6 relative z-10 text-center">
             
             <!-- BOTONES DE NAVEGACIÓN (Arriba del título principal) -->
@@ -207,8 +256,8 @@
                         <div class="flex flex-col md:flex-row justify-between items-center bg-slate-50 p-6 md:p-8 rounded-3xl border border-gray-200 shadow-sm gap-6">
                             <div class="text-center md:text-left">
                                 <p class="text-xs md:text-sm font-black text-gray-400 uppercase tracking-[0.2em] mb-1">Recaudado hasta hoy</p>
-                                <p class="text-4xl md:text-5xl font-black text-brand tracking-tighter">$90.477.678</p>
-                                <p class="text-[10px] md:text-xs text-gray-500 mt-2 font-bold italic uppercase tracking-wider">Monto actualizado al 27 de mayo 23:43 hrs</p>
+                                <p class="text-4xl md:text-5xl font-black text-brand tracking-tighter"><span id="monto-recaudado">$94.173.794</span></p>
+                                <p class="text-[10px] md:text-xs text-gray-500 mt-2 font-bold italic uppercase tracking-wider">Monto actualizado al <span id="fecha-actualizacion">03 de junio 22:50 hrs</span></p>
                             </div>
                             
                             <div class="w-full md:w-1/2">
@@ -218,11 +267,11 @@
                                 </div>
                                 <div class="w-full bg-red-100 border border-red-200 rounded-full h-7 md:h-8 overflow-hidden shadow-inner relative">
                                     <div class="absolute inset-0 flex items-center justify-end pr-4 pointer-events-none">
-                                        <span class="text-[10px] md:text-xs font-black text-red-500/80 tracking-widest">69.84%</span>
+                                        <span id="porcentaje-faltante-barra" class="text-[10px] md:text-xs font-black text-red-500/80 tracking-widest">68.61%</span>
                                     </div>
-                                    <div class="bg-gradient-to-r from-cyan-400 to-cyan-600 h-full rounded-full relative transition-all duration-1000 ease-out flex items-center justify-end pr-3 shadow-[3px_0_10px_rgba(0,0,0,0.15)]" style="width: 30.16%">
+                                    <div id="barra-avance" class="bg-gradient-to-r from-cyan-400 to-cyan-600 h-full rounded-full relative transition-all duration-1000 ease-out flex items-center justify-end pr-3 shadow-[3px_0_10px_rgba(0,0,0,0.15)]" style="width: 31.39%">
                                         <div class="w-full h-full absolute top-0 left-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMiI+PC9yZWN0Pjwvc3ZnPg==')] opacity-30 mix-blend-overlay"></div>
-                                        <span class="text-[10px] md:text-xs font-black text-white relative z-10 drop-shadow-md">30.16%</span>
+                                        <span id="porcentaje-avance" class="text-[10px] md:text-xs font-black text-white relative z-10 drop-shadow-md">31.39%</span>
                                     </div>
                                 </div>
                                 
@@ -233,8 +282,8 @@
                                         </span>
                                     </div>
                                     <div class="flex flex-col justify-center items-center mt-2 gap-1 text-center">
-                                        <span class="text-2xl md:text-3xl font-black text-red-600 tracking-tighter">Faltan $209.522.322</span>
-                                        <span class="text-sm font-black text-red-500 uppercase tracking-widest mt-1">69.84% Restante</span>
+                                        <span id="monto-faltante" class="text-2xl md:text-3xl font-black text-red-600 tracking-tighter">Faltan $205.826.206</span>
+                                        <span id="porcentaje-restante" class="text-sm font-black text-red-500 uppercase tracking-widest mt-1">68.61% Restante</span>
                                     </div>
                                 </div>
                             </div>
@@ -828,6 +877,44 @@
     </div>
 
     <script>
+
+        // --- CÓMPUTO DE CAMPAÑA ---
+        // Para actualizar la campaña después, cambia solo estos 3 valores.
+        const metaCampana = 300000000;
+        const montoRecaudadoCampana = 94173794;
+        const fechaActualizacionCampana = "03 de junio 22:50 hrs";
+
+        function formatoCLP(valor) {
+            return "$" + Math.round(valor).toLocaleString("es-CL");
+        }
+
+        function actualizarComputoCampana() {
+            const montoFaltante = Math.max(metaCampana - montoRecaudadoCampana, 0);
+            const porcentajeAvance = Math.min((montoRecaudadoCampana / metaCampana) * 100, 100);
+            const porcentajeFaltante = Math.max(100 - porcentajeAvance, 0);
+
+            const porcentajeAvanceTexto = porcentajeAvance.toFixed(2) + "%";
+            const porcentajeFaltanteTexto = porcentajeFaltante.toFixed(2) + "%";
+
+            const montoRecaudadoEl = document.getElementById("monto-recaudado");
+            const fechaEl = document.getElementById("fecha-actualizacion");
+            const barraAvanceEl = document.getElementById("barra-avance");
+            const porcentajeAvanceEl = document.getElementById("porcentaje-avance");
+            const porcentajeFaltanteBarraEl = document.getElementById("porcentaje-faltante-barra");
+            const montoFaltanteEl = document.getElementById("monto-faltante");
+            const porcentajeRestanteEl = document.getElementById("porcentaje-restante");
+
+            if (montoRecaudadoEl) montoRecaudadoEl.textContent = formatoCLP(montoRecaudadoCampana);
+            if (fechaEl) fechaEl.textContent = fechaActualizacionCampana;
+            if (barraAvanceEl) barraAvanceEl.style.width = porcentajeAvanceTexto;
+            if (porcentajeAvanceEl) porcentajeAvanceEl.textContent = porcentajeAvanceTexto;
+            if (porcentajeFaltanteBarraEl) porcentajeFaltanteBarraEl.textContent = porcentajeFaltanteTexto;
+            if (montoFaltanteEl) montoFaltanteEl.textContent = "Faltan " + formatoCLP(montoFaltante);
+            if (porcentajeRestanteEl) porcentajeRestanteEl.textContent = porcentajeFaltanteTexto + " Restante";
+        }
+
+        actualizarComputoCampana();
+
         function copyData(bankType) {
             let textToCopy = "";
             

@@ -256,8 +256,8 @@
                         <div class="flex flex-col md:flex-row justify-between items-center bg-slate-50 p-6 md:p-8 rounded-3xl border border-gray-200 shadow-sm gap-6">
                             <div class="text-center md:text-left">
                                 <p class="text-xs md:text-sm font-black text-gray-400 uppercase tracking-[0.2em] mb-1">Recaudado hasta hoy</p>
-                                <p class="text-4xl md:text-5xl font-black text-brand tracking-tighter"><span id="monto-recaudado">$94.173.794</span></p>
-                                <p class="text-[10px] md:text-xs text-gray-500 mt-2 font-bold italic uppercase tracking-wider">Monto actualizado al <span id="fecha-actualizacion">03 de junio 22:50 hrs</span></p>
+                                <p class="text-4xl md:text-5xl font-black text-brand tracking-tighter"><span id="monto-recaudado">$103.825.340</span></p>
+                                <p class="text-[10px] md:text-xs text-gray-500 mt-2 font-bold italic uppercase tracking-wider">Monto actualizado al <span id="fecha-actualizacion">10 de junio 2026</span></p>
                             </div>
                             
                             <div class="w-full md:w-1/2">
@@ -267,11 +267,11 @@
                                 </div>
                                 <div class="w-full bg-red-100 border border-red-200 rounded-full h-7 md:h-8 overflow-hidden shadow-inner relative">
                                     <div class="absolute inset-0 flex items-center justify-end pr-4 pointer-events-none">
-                                        <span id="porcentaje-faltante-barra" class="text-[10px] md:text-xs font-black text-red-500/80 tracking-widest">68.61%</span>
+                                        <span id="porcentaje-faltante-barra" class="text-[10px] md:text-xs font-black text-red-500/80 tracking-widest">65.39%</span>
                                     </div>
-                                    <div id="barra-avance" class="bg-gradient-to-r from-cyan-400 to-cyan-600 h-full rounded-full relative transition-all duration-1000 ease-out flex items-center justify-end pr-3 shadow-[3px_0_10px_rgba(0,0,0,0.15)]" style="width: 31.39%">
+                                    <div id="barra-avance" class="bg-gradient-to-r from-cyan-400 to-cyan-600 h-full rounded-full relative transition-all duration-1000 ease-out flex items-center justify-end pr-3 shadow-[3px_0_10px_rgba(0,0,0,0.15)]" style="width: 34.61%">
                                         <div class="w-full h-full absolute top-0 left-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMiI+PC9yZWN0Pjwvc3ZnPg==')] opacity-30 mix-blend-overlay"></div>
-                                        <span id="porcentaje-avance" class="text-[10px] md:text-xs font-black text-white relative z-10 drop-shadow-md">31.39%</span>
+                                        <span id="porcentaje-avance" class="text-[10px] md:text-xs font-black text-white relative z-10 drop-shadow-md">34.61%</span>
                                     </div>
                                 </div>
                                 
@@ -282,8 +282,8 @@
                                         </span>
                                     </div>
                                     <div class="flex flex-col justify-center items-center mt-2 gap-1 text-center">
-                                        <span id="monto-faltante" class="text-2xl md:text-3xl font-black text-red-600 tracking-tighter">Faltan $205.826.206</span>
-                                        <span id="porcentaje-restante" class="text-sm font-black text-red-500 uppercase tracking-widest mt-1">68.61% Restante</span>
+                                        <span id="monto-faltante" class="text-2xl md:text-3xl font-black text-red-600 tracking-tighter">Faltan $196.174.660</span>
+                                        <span id="porcentaje-restante" class="text-sm font-black text-red-500 uppercase tracking-widest mt-1">65.39% Restante</span>
                                     </div>
                                 </div>
                             </div>
@@ -897,8 +897,8 @@
         // --- CÓMPUTO DE CAMPAÑA ---
         // Para actualizar la campaña después, cambia solo estos 3 valores.
         const metaCampana = 300000000;
-        const montoRecaudadoCampana = 94173794;
-        const fechaActualizacionCampana = "03 de junio 22:50 hrs";
+        const montoRecaudadoCampana = 103825340;
+        const fechaActualizacionCampana = "10 de junio 2026";
 
         function formatoCLP(valor) {
             return "$" + Math.round(valor).toLocaleString("es-CL");

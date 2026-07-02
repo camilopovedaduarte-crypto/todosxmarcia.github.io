@@ -918,3 +918,26 @@
     </script>
 </body>
 </html>
+<script>
+const meta = 300000000;
+let recaudado = 108394984; // 👈 SOLO CAMBIA ESTO
+
+function formatoCLP(num) {
+    return "$" + Math.round(num).toLocaleString("es-CL");
+}
+
+function actualizar() {
+    const faltante = meta - recaudado;
+    const avance = (recaudado / meta) * 100;
+    const restante = 100 - avance;
+
+    document.getElementById("monto-recaudado").textContent = formatoCLP(recaudado);
+    document.getElementById("monto-faltante").textContent = "Faltan " + formatoCLP(faltante);
+    document.getElementById("porcentaje-avance").textContent = avance.toFixed(2) + "%";
+    document.getElementById("porcentaje-restante").textContent = restante.toFixed(2) + "% Restante";
+    
+    document.getElementById("barra-avance").style.width = avance.toFixed(2) + "%";
+}
+
+actualizar();
+</script>

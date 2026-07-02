@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -47,7 +47,7 @@
         .text-balance {
             text-wrap: balance;
         }
-        
+
         /* Animación para el sticky footer */
         .sticky-footer {
             animation: slideUp 0.5s ease-out forwards;
@@ -82,9 +82,47 @@
             0% { transform: translate(0, 0); }
             100% { transform: translate(-100%, 0); }
         }
-        
+
         body { padding-top: 40px; }
         nav { top: 40px; }
+
+        /* Botón destacado de rifa en el encabezado */
+        .raffle-ticket-btn {
+            position: relative;
+            isolation: isolate;
+            background: linear-gradient(135deg, #fff7cc 0%, #facc15 30%, #f59e0b 58%, #b45309 100%);
+            color: #3b2203;
+            box-shadow: 0 10px 26px rgba(245, 158, 11, 0.42), inset 0 1px 0 rgba(255,255,255,0.7);
+            border: 1px solid rgba(180, 83, 9, 0.35);
+            overflow: hidden;
+        }
+        .raffle-ticket-btn::before,
+        .raffle-ticket-btn::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 13px;
+            height: 13px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 999px;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+        .raffle-ticket-btn::before { left: -7px; }
+        .raffle-ticket-btn::after { right: -7px; }
+        .raffle-ticket-btn .ticket-shine {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.5) 45%, transparent 70%);
+            transform: translateX(-120%);
+            animation: ticketShine 3.2s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes ticketShine {
+            0%, 45% { transform: translateX(-120%); }
+            70%, 100% { transform: translateX(120%); }
+        }
+
         @media (min-width: 768px) {
             body { padding-top: 44px; }
             nav { top: 44px; }
@@ -101,26 +139,37 @@
     </div>
 
     <!-- Sticky Footer para Móvil -->
-    <div class="md:hidden fixed bottom-0 left-0 w-full p-4 glass-nav border-t border-gray-100 z-[60] flex gap-3 sticky-footer shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
-        <a href="https://link.mercadopago.cl/todosxmarcia" target="_blank" class="flex-[1.5] bg-blue-500 text-white text-center py-4 rounded-2xl font-black text-sm uppercase tracking-tighter shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
-            <i class="fa-solid fa-wallet"></i> Mercado Pago
+    <div class="md:hidden fixed bottom-0 left-0 w-full p-3 glass-nav border-t border-gray-100 z-[60] flex gap-2 sticky-footer shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
+        <a href="https://link.mercadopago.cl/todosxmarcia" target="_blank" class="flex-1 min-w-0 bg-blue-500 text-white text-center py-3.5 rounded-2xl font-black text-[11px] uppercase tracking-tighter shadow-lg active:scale-95 transition-transform flex flex-col items-center justify-center gap-1 leading-tight">
+            <i class="fa-solid fa-wallet text-base"></i>
+            <span>Mercado Pago</span>
         </a>
-        <a href="#donar" class="flex-1 bg-brand text-white text-center py-4 rounded-2xl font-black text-sm uppercase tracking-tighter shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
-            <i class="fa-solid fa-building-columns"></i> Datos
+        <a href="#donar" class="flex-1 min-w-0 bg-brand text-white text-center py-3.5 rounded-2xl font-black text-[11px] uppercase tracking-tighter shadow-lg active:scale-95 transition-transform flex flex-col items-center justify-center gap-1 leading-tight">
+            <i class="fa-solid fa-building-columns text-base"></i>
+            <span>Datos</span>
+        </a>
+        <a href="https://rifatodosxmarcia.cl/" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-0 bg-gradient-to-br from-yellow-300 via-amber-400 to-yellow-600 text-amber-950 text-center py-3.5 rounded-2xl font-black text-[11px] uppercase tracking-tighter shadow-lg shadow-yellow-500/30 active:scale-95 transition-transform flex flex-col items-center justify-center gap-1 leading-tight border border-yellow-200">
+            <i class="fa-solid fa-ticket text-base"></i>
+            <span>Comprar NRO Rifa</span>
         </a>
     </div>
 
     <!-- Navbar con Íconos de Donación -->
     <nav class="fixed w-full glass-nav shadow-sm z-50">
         <div class="max-w-6xl mx-auto px-4 lg:px-6">
-            <div class="flex justify-between items-center h-16 md:h-20">
+            <div class="nav-inner-responsive flex justify-between items-center h-16 md:h-20 flex-wrap md:flex-nowrap">
                 <a href="#" class="font-serif font-bold text-xl md:text-3xl text-brand tracking-tight flex items-center gap-1 md:gap-2 shrink-0">
                    <span class="text-2xl md:text-3xl">❤️</span> <span class="hidden sm:inline">#TodosxMarcia</span><span class="sm:hidden">Marcia</span>
                 </a>
-                
-                <!-- Íconos de Donación Rápidos -->
-                <div class="flex items-center gap-2 md:gap-3">
-                    <span class="hidden md:block text-xs font-black text-gray-400 uppercase tracking-widest mr-2">Aportar:</span>
+
+                <!-- Accesos rápidos del encabezado -->
+                <div class="nav-actions-responsive flex items-center gap-2 md:gap-3">
+                    <a href="https://rifatodosxmarcia.cl/" target="_blank" rel="noopener noreferrer" title="Gran Rifa por Marcia" class="raffle-ticket-btn h-11 px-4 md:px-5 rounded-full font-black uppercase tracking-widest text-xs flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all duration-300 shrink-0">
+                        <span class="ticket-shine"></span>
+                        <i class="fa-solid fa-ticket relative z-10 text-base"></i>
+                        <span class="relative z-10 whitespace-nowrap">Gran Rifa por Marcia</span>
+                    </a>
+                    <span class="hidden lg:block text-xs font-black text-gray-400 uppercase tracking-widest mr-2">Aportar:</span>
                     <a href="https://link.mercadopago.cl/todosxmarcia" target="_blank" title="Link MercadoPago" class="flex items-center justify-center w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-blue-400 to-blue-600 text-white rounded-full hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] border border-white/40">
                         <i class="fa-solid fa-link text-sm md:text-base drop-shadow-md"></i>
                     </a>
@@ -142,9 +191,9 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-20 pb-12 md:pt-28 md:pb-16 bg-brand-light/20 overflow-hidden">
+    <section class="relative pt-32 pb-12 md:pt-28 md:pb-16 bg-brand-light/20 overflow-hidden">
         <div class="max-w-5xl mx-auto px-4 md:px-6 relative z-10 text-center">
-            
+
             <!-- BOTONES DE NAVEGACIÓN (Arriba del título principal) -->
             <div class="flex flex-wrap justify-center items-center gap-3 md:gap-4 xl:gap-5 mb-8 md:mb-10 mt-4">
                 <a href="#historia" class="bg-gradient-to-r from-brand to-rose-600 text-white px-5 md:px-7 py-3 md:py-3.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(225,29,72,0.6)] hover:shadow-[0_12px_25px_-6px_rgba(225,29,72,0.8)] hover:-translate-y-1 border border-rose-400/30 backdrop-blur-sm">
@@ -179,8 +228,8 @@
             <div class="mb-8 md:mb-10 flex justify-center">
                 <div class="relative group">
                     <div class="absolute inset-0 bg-brand/20 rounded-[3rem] blur-2xl transform scale-90 group-hover:scale-100 transition-transform duration-700"></div>
-                    <img src="https://cdn.shopify.com/s/files/1/0892/7710/4449/files/Captura_de_pantalla_2026-04-11_a_las_6.05.48_p._m..png?v=1775945192" 
-                         alt="Marcia Gómez" 
+                    <img src="https://cdn.shopify.com/s/files/1/0892/7710/4449/files/Captura_de_pantalla_2026-04-11_a_las_6.05.48_p._m..png?v=1775945192"
+                         alt="Marcia Gómez"
                          class="relative w-full max-w-[340px] md:max-w-[480px] rounded-[3rem] shadow-2xl border-4 md:border-8 border-white object-cover aspect-[4/5] md:aspect-auto transform transition-transform duration-500">
                 </div>
             </div>
@@ -194,10 +243,10 @@
                 <div id="computo" class="max-w-2xl mx-auto mb-8 bg-white p-6 md:p-10 rounded-[3rem] shadow-2xl border-4 border-brand/20 relative overflow-hidden text-center transform hover:scale-[1.02] transition-transform duration-300 scroll-mt-24">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-brand-light/30 rounded-full blur-3xl -mr-20 -mt-20"></div>
                     <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl -ml-20 -mb-20"></div>
-                    
+
                     <div class="relative z-10">
                         <p class="text-sm md:text-base font-black text-brand uppercase tracking-[0.4em] mb-3 animate-pulse"><i class="fa-solid fa-bullseye"></i> Nuestra Gran Meta</p>
-                        
+
                         <div class="bg-gray-900 rounded-[2rem] py-6 px-2 mb-8 shadow-inner inline-block w-full border-b-8 border-gray-800">
                             <p class="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter drop-shadow-2xl font-mono">
                                 $300.000.000
@@ -207,10 +256,10 @@
                         <div class="flex flex-col md:flex-row justify-between items-center bg-slate-50 p-6 md:p-8 rounded-3xl border border-gray-200 shadow-sm gap-6">
                             <div class="text-center md:text-left">
                                 <p class="text-xs md:text-sm font-black text-gray-400 uppercase tracking-[0.2em] mb-1">Recaudado hasta hoy</p>
-                                <p class="text-4xl md:text-5xl font-black text-brand tracking-tighter">$108.394.984</p>
-                                <p class="text-[10px] md:text-xs text-gray-500 mt-2 font-bold italic uppercase tracking-wider">Monto actualizado al 27 de mayo 23:43 hrs</p>
+                                <p class="text-4xl md:text-5xl font-black text-brand tracking-tighter" id="monto-recaudado">$108.394.984</p>
+                                <p class="text-[10px] md:text-xs text-gray-500 mt-2 font-bold italic uppercase tracking-wider">Monto actualizado al <span id="fecha-actualizacion">03 de junio 22:50 hrs</span></p>
                             </div>
-                            
+
                             <div class="w-full md:w-1/2">
                                 <div class="flex justify-between items-end mb-2 uppercase tracking-widest">
                                     <span class="text-[10px] md:text-xs font-black text-cyan-600">Llevamos</span>
@@ -218,14 +267,14 @@
                                 </div>
                                 <div class="w-full bg-red-100 border border-red-200 rounded-full h-7 md:h-8 overflow-hidden shadow-inner relative">
                                     <div class="absolute inset-0 flex items-center justify-end pr-4 pointer-events-none">
-                                        <span class="text-[10px] md:text-xs font-black text-red-500/80 tracking-widest">63.87%</span>
+                                        <span id="porcentaje-faltante-barra" class="text-[10px] md:text-xs font-black text-red-500/80 tracking-widest">68.61%</span>
                                     </div>
-                                    <div class="bg-gradient-to-r from-cyan-400 to-cyan-600 h-full rounded-full relative transition-all duration-1000 ease-out flex items-center justify-end pr-3 shadow-[3px_0_10px_rgba(0,0,0,0.15)]" style="width: 36.13%">
+                                    <div id="barra-avance" class="bg-gradient-to-r from-cyan-400 to-cyan-600 h-full rounded-full relative transition-all duration-1000 ease-out flex items-center justify-end pr-3 shadow-[3px_0_10px_rgba(0,0,0,0.15)]" style="width: 31.39%">
                                         <div class="w-full h-full absolute top-0 left-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMiI+PC9yZWN0Pjwvc3ZnPg==')] opacity-30 mix-blend-overlay"></div>
-                                        <span class="text-[10px] md:text-xs font-black text-white relative z-10 drop-shadow-md">36.13%</span>
+                                        <span id="porcentaje-avance" class="text-[10px] md:text-xs font-black text-white relative z-10 drop-shadow-md">31.39%</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="mt-6 p-4 bg-red-50 border-2 border-red-200 rounded-2xl relative shadow-sm">
                                     <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2">
                                         <span class="bg-red-600 text-white text-[10px] md:text-xs px-4 py-1.5 rounded-full font-black uppercase tracking-[0.2em] animate-pulse shadow-lg flex items-center gap-2 whitespace-nowrap">
@@ -233,13 +282,13 @@
                                         </span>
                                     </div>
                                     <div class="flex flex-col justify-center items-center mt-2 gap-1 text-center">
-                                        <span class="text-2xl md:text-3xl font-black text-red-600 tracking-tighter">Faltan $191.605.016</span>
-                                        <span class="text-sm font-black text-red-500 uppercase tracking-widest mt-1">63.87% Restante</span>
+                                        <span id="monto-faltante" class="text-2xl md:text-3xl font-black text-red-600 tracking-tighter">Faltan $205.826.206</span>
+                                        <span id="porcentaje-restante" class="text-sm font-black text-red-500 uppercase tracking-widest mt-1">68.61% Restante</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <p class="text-center text-base md:text-lg text-gray-700 font-bold mt-6 relative z-10 italic">
                             "La montaña es gigante, pero con tu ayuda no es imposible. ¡Necesitamos de todos!"
                         </p>
@@ -258,21 +307,21 @@
                         <!-- Decoración de fondo -->
                         <div class="absolute top-0 right-0 w-32 h-32 bg-rose-100 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
                         <div class="absolute bottom-0 left-0 w-32 h-32 bg-brand-light rounded-full blur-3xl -ml-10 -mb-10 pointer-events-none"></div>
-                        
+
                         <div class="relative z-10">
                             <span class="inline-flex items-center justify-center gap-2 bg-rose-100 text-brand px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-4">
                                 <i class="fa-solid fa-music animate-bounce"></i> Videoclip Oficial
                             </span>
                             <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4 text-gray-900 tracking-tight">El Himno de Nuestra Campaña</h2>
                             <p class="text-gray-600 mb-8 max-w-2xl mx-auto font-medium md:text-lg text-balance">Una canción hecha con todo el corazón para darle fuerzas a Marcia. <strong class="text-brand">¡Sube el volumen y acompáñanos!</strong></p>
-                            
+
                             <!-- Contenedor del reproductor (formato vertical 9:16) -->
                             <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black group-hover:shadow-[0_20px_50px_rgba(225,29,72,0.3)] transition-all duration-500 max-w-sm mx-auto">
                                 <video id="video-oficial" controls class="w-full aspect-[9/16] object-contain bg-black" poster="https://cdn.shopify.com/s/files/1/0892/7710/4449/files/Captura_de_pantalla_2026-04-11_a_las_6.05.48_p._m..png?v=1775945192" preload="auto">
                                     <source src="https://cdn.shopify.com/videos/c/o/v/42470be480df491db8abbb5173af97cc.mp4" type="video/mp4">
                                     Tu navegador no soporta la etiqueta de video.
                                 </video>
-                                
+
                                 <!-- Overlay para forzar Play (Requisito de navegadores móviles para el sonido) -->
                                 <div id="play-overlay" class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center cursor-pointer transition-opacity duration-500 hover:bg-black/60 backdrop-blur-[2px]">
                                     <div class="w-20 h-20 md:w-24 md:h-24 bg-brand text-white rounded-full flex items-center justify-center text-3xl md:text-4xl shadow-[0_0_40px_rgba(225,29,72,0.8)] mb-4 animate-pulse transform group-hover:scale-110 transition-transform">
@@ -294,7 +343,7 @@
                                 <i class="fa-solid fa-star text-yellow-300"></i> Curso Solidario ADIPA
                             </h3>
                         </div>
-                        
+
                         <div class="p-8 md:p-12 flex flex-col lg:flex-row gap-10 items-center">
                             <!-- Información Izquierda -->
                             <div class="w-full lg:w-1/2">
@@ -302,12 +351,12 @@
                                 <p class="text-base md:text-lg text-gray-700 mb-6 font-medium leading-relaxed">
                                     <strong class="text-indigo-600 font-black">¡Súmate ayudando y estudiando!</strong> ADIPA ha lanzado este programa de formación especial, y todo lo recaudado a través de las inscripciones irá en directo beneficio de la campaña de Marcia.
                                 </p>
-                                
+
                                 <div class="bg-white rounded-3xl p-6 border-2 border-indigo-100 shadow-sm mb-8 inline-block w-full sm:w-auto text-center sm:text-left">
                                     <span class="block text-xs font-black text-gray-400 uppercase tracking-widest mb-1">Valor Especial Solidario</span>
                                     <span class="text-4xl md:text-5xl font-black text-indigo-600 tracking-tighter">$10.000 <span class="text-2xl text-indigo-400">CLP</span></span>
                                 </div>
-                                
+
                                 <a href="https://adipa.cl/cursos/trastornos-ansiedad-intervenciones-breves-clinica/" target="_blank" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-black py-5 px-8 rounded-2xl shadow-xl shadow-indigo-500/30 active:scale-95 transition-all flex items-center justify-center gap-3 uppercase tracking-wider text-sm md:text-base">
                                     Inscribirme al Curso <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
@@ -371,7 +420,7 @@
                     <h3 class="text-2xl md:text-3xl font-black text-gray-800 mb-6 uppercase tracking-tighter flex items-center justify-center gap-3">
                         <i class="fa-solid fa-microphone-lines text-brand"></i> Marcia en los Medios
                     </h3>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                         <div class="flex flex-col justify-between w-full overflow-hidden rounded-[2.5rem] shadow-2xl border-4 border-white bg-white transform hover:-translate-y-1 transition-transform duration-300">
                             <div class="bg-gray-100 py-3 text-center border-b border-gray-200">
@@ -600,19 +649,19 @@
     <section id="historia" class="py-16 md:py-24 bg-white scroll-mt-24">
         <div class="max-w-4xl mx-auto px-6 md:px-8 text-center">
             <h2 class="text-6xl md:text-8xl font-cursive text-brand mb-12 block">¿Quién es Marcia?</h2>
-            
+
             <!-- Presentación Biográfica -->
             <div class="bg-gray-50 p-8 md:p-12 rounded-[3rem] text-left text-gray-700 leading-relaxed space-y-6 text-lg md:text-xl font-medium shadow-inner mb-16 border border-gray-100">
                 <p>Marcia es una persona muy querida por su familia y amigos/as, es mamá de Benjamín (5 años) y Valentina (2 años).</p>
                 <p>Se caracteriza por ser una persona alegre, llena de vida, energía y ganas de vivir. Quienes la conocen destacan su cariño, su capacidad de acompañar a los demás y la luz que transmite en cada espacio.</p>
                 <p>Junto a su pareja, Andrés, estaban construyendo su hogar y formando una hermosa familia junto a sus dos pequeños hijos, quienes hoy son su principal motor para seguir luchando.</p>
-                
+
                 <div class="border-l-4 border-brand pl-6 my-8 py-4 bg-white rounded-r-2xl shadow-sm p-4">
                     <p class="mb-4">En <strong class="text-gray-900">diciembre de 2024</strong>, Marcia fue diagnosticada con leucemia linfoblástica aguda, comenzando una dura batalla contra el cáncer.</p>
                     <p class="mb-4">En <strong class="text-gray-900">abril de 2025</strong> logró acceder a un trasplante de médula ósea y durante meses sus controles fueron positivos.</p>
                     <p class="text-brand-dark font-black">Sin embargo, en <strong class="text-gray-900">abril de 2026</strong>, los exámenes confirmaron que el cáncer había regresado.</p>
                 </div>
-                
+
                 <p>Actualmente, en Chile las opciones para Marcia son únicamente tratamientos paliativos, pero aún existe una esperanza: acceder a la <strong class="text-gray-900">terapia CAR-T</strong>, un tratamiento innovador que podría darle una nueva oportunidad de vida.</p>
             </div>
 
@@ -624,7 +673,7 @@
                 <p>"Por mí, por mis hijos pequeños, por mi familia... porque no quiero dejarlos solos. Cualquier ayuda suma muchísimo."</p>
                 <i class="fa-solid fa-quote-right text-4xl text-brand/20 absolute bottom-0 right-0"></i>
             </div>
-            
+
             <div class="mt-20 pt-10 border-t border-gray-100 flex flex-col items-center">
                 <p class="font-black text-gray-900 uppercase tracking-[0.4em] text-sm mb-4">Marcia Andrea Gómez Gallardo</p>
                 <div class="w-16 h-1 bg-brand-light rounded-full"></div>
@@ -637,14 +686,14 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-16">
                 <div class="w-full md:w-1/2 flex justify-center order-2 md:order-1 relative">
-                    <img src="https://cdn.shopify.com/s/files/1/0892/7710/4449/files/Captura_de_pantalla_2026-04-11_a_las_6.05.57_p._m..png?v=1775945192" 
-                         alt="Sobre LLA" 
+                    <img src="https://cdn.shopify.com/s/files/1/0892/7710/4449/files/Captura_de_pantalla_2026-04-11_a_las_6.05.57_p._m..png?v=1775945192"
+                         alt="Sobre LLA"
                          class="w-full max-w-sm rounded-[2.5rem] shadow-2xl border-8 border-white">
                 </div>
                 <div class="w-full md:w-1/2 order-1 md:order-2 text-center md:text-left">
                     <h2 class="text-3xl md:text-5xl font-serif font-bold mb-8 text-gray-900 leading-tight">Leucemia Linfoblástica Aguda (LLA)</h2>
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed text-balance">Ocurre cuando la médula ósea empieza a producir glóbulos blancos inmaduros y anormales que crecen muy rápido y ocupan el espacio de las células sanas.</p>
-                    
+
                     <div class="bg-white p-8 rounded-[2rem] shadow-sm border-l-8 border-brand space-y-6 text-left">
                         <p class="text-gray-900 font-bold mb-4 uppercase text-xs tracking-widest">El cuerpo deja de producir correctamente:</p>
                         <div class="flex items-start gap-4">
@@ -713,7 +762,7 @@
                         <span class="bg-slate-100 px-6 py-3 rounded-2xl font-black text-gray-800 border border-gray-200 shadow-sm uppercase tracking-tighter">🇨🇳 China</span>
                     </div>
                 </div>
-                
+
                 <div class="bg-brand-dark text-white rounded-[3rem] p-10 md:p-14 shadow-2xl flex flex-col justify-center text-center">
                     <h3 class="text-sm font-black uppercase tracking-[0.3em] mb-4 opacity-70 italic">Meta de Campaña</h3>
                     <div class="text-5xl md:text-8xl font-black mb-4 leading-none tracking-tighter">$300</div>
@@ -729,7 +778,7 @@
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6 text-gray-900 leading-tight">Transparencia y Confianza</h2>
             <p class="text-gray-500 text-lg mb-12">Publicamos el informe médico que acredita la situación de Marcia para tu total seguridad.</p>
-            
+
             <div class="max-w-md mx-auto bg-white rounded-[3rem] p-10 shadow-xl border border-gray-200 transform hover:-translate-y-2 transition-transform">
                 <div class="w-24 h-24 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
                     <i class="fa-solid fa-file-pdf text-4xl text-brand"></i>
@@ -753,7 +802,7 @@
                 </button>
 
                 <h3 class="text-2xl font-black text-gray-900 mb-6 text-center uppercase tracking-tighter">Informe Médico de Respaldo</h3>
-                
+
                 <div class="space-y-4">
                     <img src="https://cdn.shopify.com/s/files/1/0892/7710/4449/files/IMG-20260411-WA0152.jpg?v=1775959920" alt="Examen Biopsia Página 1" class="w-full h-auto rounded-2xl shadow-md border border-gray-200" loading="lazy">
                     <img src="https://cdn.shopify.com/s/files/1/0892/7710/4449/files/IMG-20260411-WA0153.jpg?v=1775959926" alt="Examen Biopsia Página 2" class="w-full h-auto rounded-2xl shadow-md border border-gray-200" loading="lazy">
@@ -828,9 +877,47 @@
     </div>
 
     <script>
+
+        // --- CÓMPUTO DE CAMPAÑA ---
+        // Para actualizar la campaña después, cambia solo estos 3 valores.
+        const metaCampana = 300000000;
+        const montoRecaudadoCampana = 108394984;
+        const fechaActualizacionCampana = "27 de mayo 23:43 hrs";
+
+        function formatoCLP(valor) {
+            return "$" + Math.round(valor).toLocaleString("es-CL");
+        }
+
+        function actualizarComputoCampana() {
+            const montoFaltante = Math.max(metaCampana - montoRecaudadoCampana, 0);
+            const porcentajeAvance = Math.min((montoRecaudadoCampana / metaCampana) * 100, 100);
+            const porcentajeFaltante = Math.max(100 - porcentajeAvance, 0);
+
+            const porcentajeAvanceTexto = porcentajeAvance.toFixed(2) + "%";
+            const porcentajeFaltanteTexto = porcentajeFaltante.toFixed(2) + "%";
+
+            const montoRecaudadoEl = document.getElementById("monto-recaudado");
+            const fechaEl = document.getElementById("fecha-actualizacion");
+            const barraAvanceEl = document.getElementById("barra-avance");
+            const porcentajeAvanceEl = document.getElementById("porcentaje-avance");
+            const porcentajeFaltanteBarraEl = document.getElementById("porcentaje-faltante-barra");
+            const montoFaltanteEl = document.getElementById("monto-faltante");
+            const porcentajeRestanteEl = document.getElementById("porcentaje-restante");
+
+            if (montoRecaudadoEl) montoRecaudadoEl.textContent = formatoCLP(montoRecaudadoCampana);
+            if (fechaEl) fechaEl.textContent = fechaActualizacionCampana;
+            if (barraAvanceEl) barraAvanceEl.style.width = porcentajeAvanceTexto;
+            if (porcentajeAvanceEl) porcentajeAvanceEl.textContent = porcentajeAvanceTexto;
+            if (porcentajeFaltanteBarraEl) porcentajeFaltanteBarraEl.textContent = porcentajeFaltanteTexto;
+            if (montoFaltanteEl) montoFaltanteEl.textContent = "Faltan " + formatoCLP(montoFaltante);
+            if (porcentajeRestanteEl) porcentajeRestanteEl.textContent = porcentajeFaltanteTexto + " Restante";
+        }
+
+        actualizarComputoCampana();
+
         function copyData(bankType) {
             let textToCopy = "";
-            
+
             if (bankType === 'mercadopago') {
                 textToCopy = "Nombre: Marcia Andrea Gómez Gallardo\nRUT: 15.296.589-3\nBanco: Mercado Pago\nTipo de cuenta: Cuenta Vista\nNúmero de cuenta: 1107498307\nCorreo: todosxmarcia@gmail.com";
             } else if (bankType === 'bancoestado') {
@@ -848,17 +935,17 @@
             textArea.style.position = "fixed";
             textArea.style.top = "-9999px";
             document.body.appendChild(textArea);
-            
+
             textArea.focus();
             textArea.select();
-            
+
             try {
                 document.execCommand('copy');
                 showToast();
             } catch (err) {
                 console.error('No se pudo copiar el texto', err);
             }
-            
+
             document.body.removeChild(textArea);
         }
 
@@ -866,7 +953,7 @@
             const toast = document.getElementById('copy-toast');
             toast.classList.remove('opacity-0');
             toast.classList.add('opacity-100');
-            
+
             setTimeout(() => {
                 toast.classList.remove('opacity-100');
                 toast.classList.add('opacity-0');
@@ -918,26 +1005,3 @@
     </script>
 </body>
 </html>
-<script>
-const meta = 300000000;
-let recaudado = 108394984; // 👈 SOLO CAMBIA ESTO
-
-function formatoCLP(num) {
-    return "$" + Math.round(num).toLocaleString("es-CL");
-}
-
-function actualizar() {
-    const faltante = meta - recaudado;
-    const avance = (recaudado / meta) * 100;
-    const restante = 100 - avance;
-
-    document.getElementById("monto-recaudado").textContent = formatoCLP(recaudado);
-    document.getElementById("monto-faltante").textContent = "Faltan " + formatoCLP(faltante);
-    document.getElementById("porcentaje-avance").textContent = avance.toFixed(2) + "%";
-    document.getElementById("porcentaje-restante").textContent = restante.toFixed(2) + "% Restante";
-    
-    document.getElementById("barra-avance").style.width = avance.toFixed(2) + "%";
-}
-
-actualizar();
-</script>
